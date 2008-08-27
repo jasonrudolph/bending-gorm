@@ -1,0 +1,24 @@
+Bending GORM: 5-minute Techniques for Enterprise Integration
+============================================================
+
+Have you seen someone develop a Rails or Grails application in a matter of
+minutes, only to later discover that their domain model and database schema
+followed conventions that are different from your existing systems? Or
+perhaps you're interested in using Grails, but you don't want to duplicate
+your existing Java domain classes in Groovy. In this session, we'll see how
+GORM (Grails Object Relational Mapping) makes it easy to hook into your
+pre-defined schemas or existing entity classes, while still getting all the
+rapid application development (RAD) goodness that Grails has to offer.
+
+In an enterprise environment, you're no doubt surrounded by legacy schemas
+that pre-date Grails by many years, possibly even a decade or so. You want
+to develop web applications quickly with one of the next-gen frameworks, but
+there's no chance that management will agree to change all the schemas just
+so you can code your app using the conventions employed by the next big
+thing. However, we'll see that Grails offers a slew of options for quickly
+and easily adapting Grails to any database schema. Whether you prefer the
+GORM DSL, a few annotations, or even trusty ol' Hibernate XML, we can easily
+wire together our Grails domain models to our existing schema and still get
+most of the RAD benefits of Grails, including the super-productive dynamic
+finders, highly-configurable validation rules, powerful Hibernate criteria
+builders, and more.

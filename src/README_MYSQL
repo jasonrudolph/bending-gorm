@@ -1,0 +1,12 @@
+Some of the example applications require the use of a MySQL database named
+'round_table_unconventional_dev'. This database includes a schema that
+deviates from the standard Grails conventions, and the accompanying Grails
+applications illustrate various mechanisms for mapping Grails domain objects
+to a non-standard schema.
+
+SETUP
+0.  If you don't have MySQL installed, you'll need to download and
+    install it first. 
+1.  Then, create a database named 'round_table_unconventional_dev'. 
+2.  Execute the SQL in 'round_table_unconventional_dev.sql' to build and 
+    populate the database.

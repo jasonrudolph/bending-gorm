@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Hibernate" default="reverse" basedir=".">
+
+  <path id="toolslib">
+    <fileset dir="/Users/jason/dev/third_party_distibutions/HibernateTools-3.2.0.GA/plugins/org.hibernate.eclipse_3.2.0.GA/lib">
+      <include name="**/*.jar"/>
+    </fileset>
+    <fileset dir="/Users/jason/dev/third_party_distibutions/HibernateTools-3.2.0.GA/plugins/org.hibernate.eclipse_3.2.0.GA/lib/hibernate">
+      <include name="**/*.jar"/>
+    </fileset>
+    <fileset dir="/Users/jason/dev/third_party_distibutions/HibernateTools-3.2.0.GA/plugins/org.hibernate.eclipse_3.2.0.GA/lib/tools">
+      <include name="**/*.jar"/>
+    </fileset>
+    <fileset dir="lib">
+      <include name="**/*.jar"/>
+    </fileset>
+  </path>
+
+  <taskdef name="hibernatetool" classname="org.hibernate.tool.ant.HibernateToolTask" classpathref="toolslib"/>
+
+  <target name="reverse" description="Reverse engineers datasource and creates HBM mapping files">
+    <hibernatetool>
+      <jdbcconfiguration configurationfile="./hibernate.cfg.xml" revengfile="./hibernate.reveng.xml"/>
+      <hbm2hbmxml destdir="./src/xml"/>
+    </hibernatetool>
+  </target>
+
+  <target name="codegen" description="Reads HBM mapping files and generatates corresponding POJOs">
+    <hibernatetool destdir="./src/java">
+      <classpath>
+        <path refid="toolslib"/>
+      </classpath>
+      <configuration>
+        <fileset dir="./src/xml">
+          <include name="**/*.hbm.xml"/>
+        </fileset>
+      </configuration>
+      <hbm2java jdk5="true" ejb3="true"/>
+    </hibernatetool>
+  </target>
+</project>

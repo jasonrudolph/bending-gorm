@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 10, 2008 7:02:59 PM by Hibernate Tools 3.2.0.CR1 -->
+<hibernate-mapping>
+    <class name="Knight" table="knights">
+        <id name="id" type="long">
+            <column name="knight_id" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="name" not-null="true" />
+        </property>
+        <property name="numDragonsSlain" type="long">
+            <column name="dragon_count" not-null="true" />
+        </property>
+        <set name="swords" inverse="true">
+            <key>
+                <column name="assignee" />
+            </key>
+            <one-to-many class="Sword" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering SYSTEM "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-schema="IPER"/>
+  <type-mapping>
+    <!-- jdbc-type is name fom java.sql.Types -->
+    <sql-type jdbc-type="VARCHAR" hibernate-type="java.lang.String"/>
+
+    <!-- length, scale and precision can be used to specify the mapping precisely -->
+    <sql-type jdbc-type="NUMERIC" precision="1" hibernate-type="Long"/>
+    
+    <!-- the type-mappings are ordered. This mapping will be consulted last, 
+    thus overridden by the previous one if precision=1 for the column -->
+    <sql-type jdbc-type="NUMERIC" hibernate-type="big_decimal"/>
+  </type-mapping>
+</hibernate-reverse-engineering>

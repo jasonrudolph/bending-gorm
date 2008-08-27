@@ -1,0 +1,9 @@
+-This application uses the built-in in-memory HSQLDB that comes with every
+Grails app.
+
+-You may need to execute `grails upgrade` prior to running the app or running
+the tests.
+
+-One-to-many relationships -- Check out the domain
+classes in grails-app/domain. In there you'll find the Knight and Sword
+domain classes. Knights have many swords, and swords belong to knights.

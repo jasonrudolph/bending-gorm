@@ -1,0 +1,48 @@
+The applications contained herein were tested using Grails 0.6. To run the 
+applications and their tests, you'll need a working Grails installation at 
+(or above) version 1.0. See http://grails.org/installation for details on 
+installing Grails.
+
+Each of the five applications represents a different approach to using GORM
+(Grails Object Relational Mapping) to manage your domain models. The apps
+include sample domain objects used to illustrate various features of GORM
+and its relationship management strategies. 
+
+Note: As GORM is independent of any graphical user interface, these apps do
+not currently include a UI (though you could easily add one).
+
+Our sample app represents some of the domain objects you might encounter
+around the famous Round Table
+(http://en.wikipedia.org/wiki/Round_Table_%28Camelot%29), on the infinite
+quest for the ever-elusive Holy Grail. (Pun fully intended. Sorry. ;-)
+
+1. RoundTable - This application illustrates the some of the core GORM 
+features that you get using the standard Grails conventions. 
+
+2. RoundTableXML - This application illustrates the
+artifacts needed to hook Grails up to a legacy schema (or any schema that
+doesn't exactly follow the Grails conventions). Even though it's a
+"non-comforming schema," you still get all the benefit of GORM's awesome
+dynamic persistence methods!
+
+3. RoundTableEJB3 - This application illustrates the artifacts needed to use
+EJB3 entity beans as your Grails domain classes. You can do so with any
+schema, regardless of whether it conforms to the Grails conventions, and
+once again, you still get all the benefits of GORM.
+
+4. RoundTableGroovyAnnotations - So you have a non-conforming schema, but
+you don't want to write XML *and* you don't want to code your domain classes
+in Java. This application illustrates using Groovy-annotated POGOs to map
+your deviant schema to your domain model. And yes, you *still* get all the
+benefits of GORM.   
+
+5. RoundTableORMDSL - New in Grails 1.0, you can now define ORM mappings
+directly inside your traditional Grails domain classes!  Use this approach
+for working with non-conforming schemas and/or to define your indexes and
+caching strategies.
+     
+-
+
+Bonus Utility - Check out the hbm2java utility to quickly and easily reverse
+engineer an existing database schema to generate Hibernate mapping files
+and/or EJB3 entity beans.

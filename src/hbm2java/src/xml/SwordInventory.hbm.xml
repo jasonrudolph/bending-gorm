@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 10, 2008 7:02:59 PM by Hibernate Tools 3.2.0.CR1 -->
+<hibernate-mapping>
+    <class name="Sword" table="sword_inventory">
+        <id name="serialNumber" type="long">
+            <column name="serial_number" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="knight" class="Knight" fetch="select">
+            <column name="assignee" />
+        </many-to-one>
+        <property name="manufacturer" type="java.lang.String">
+            <column name="manufacturer" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,28 @@
+This application illustrates using the GORM DSL to map a Grails domain class
+to a non-conforming schema.
+
+-This application uses a MySQL database named round_table_unconventional_dev.
+See the README_MYSQL file for details on setting up that database schema.
+
+-You may need to execute `grails upgrade` prior to running the app or running
+the tests.
+
+-Areas of Interest
+
+--One-to-many relationships -- Check out the Sword domain class in 
+grails-app/domain.  In there you'll find the Sword entity implemented as a
+a normal Grails domain class...augmented with custom ORM mappings using the 
+GORM DSL.  And if you thought Grails embraced mapping-agnosticism back in 
+October 2007...
+
+http://jasonrudolph.com/blog/2007/10/15/ejb3-domain-classes-presentation-at-grails-exchange-slides-sample-code-rampant-agnosticism/
+
+...then have a look now!  In grails-app/domain, you'll also find the Castle
+domain class implemented using the raw Grails conventions (i.e., no custom O/R 
+mapping necessary).  And in src/java, you'll see find the Knight entity 
+implemented as an EJB3 entity bean.  Still, Grails manages to tie the 
+relationships together for you.  Cool stuff!
+
+--Hibernate Mapping File -- Have a look at the file in the hibernate directory.
+When using annotated Java beans as your domain classes, you need to register
+them in this hibernate.cfg.xml file.

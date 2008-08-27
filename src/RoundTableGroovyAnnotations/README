@@ -1,0 +1,22 @@
+This application illustrates using annotated Groovy beans as your Grails domain
+classes. 
+
+-This application uses a MySQL database named round_table_unconventional_dev.
+See the README_MYSQL file for details on setting up that database schema.
+
+-You may need to execute `grails upgrade` prior to running the app or running
+the tests.
+
+-Areas of Interest
+
+--One-to-many relationships -- Check out the Sword domain class in src/groovy/.
+In there you'll find the Sword entity implemented as an annotated Groovy entity
+bean. And if you look in src/java, you'll see find the Knight entity
+implemented as an EJB3 entity bean. (Knights have many swords, and swords
+belong to knights.) Some classes in Java and some in Groovy? That's right! Mix
+and match to your heart's content.
+
+--Hibernate Mapping File -- Have a look at the file in the hibernate directory.
+When using annotated Groovy beans as your domain classes, you need to register
+them in this hibernate.cfg.xml file.
+
